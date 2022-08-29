@@ -5,6 +5,7 @@ class ConnectDB {
     public $conn;
 
     public function __construct() {
+
         $servername = "localhost";
         $username = "root";
         $password = "";
@@ -14,6 +15,7 @@ class ConnectDB {
         if ($this->conn->connect_error) {
             die("Connection failed: " . $this->conn->connect_error);
         }
+        
         echo "Connected successfully";
         
     }
@@ -43,16 +45,26 @@ class ConnectDB {
         }
     }
 
-    public function SelectDB() {
-        $result = $this->QueryDB("SELECT * FROM assignment");
-    return $result;
+    public function Insert($sql){
+        if ($this->conn->query($sql) === TRUE) {
+            // echo "New record created successfully";
+            $last_id = $this->conn->insert_id;
+            return $last_id;
+            } else {
+            echo "Error: " . $sql . "<br>" . $this->conn->error;
+            return false;
+            }
     }
 
-    public function InsertDB() {
-        
-    }
-    
-
+    public function Update($sql){
+            if ($this->conn->query($sql) === TRUE) {
+                // echo "New record created successfully";
+                return true;
+              } else {
+                echo "Error: " . $sql . "<br>" . $this->conn->error;
+                return false;
+              }
+        }
 }
 
 ?>
