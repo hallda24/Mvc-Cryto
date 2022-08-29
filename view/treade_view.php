@@ -30,18 +30,18 @@
     <div class="container">
         <form method="POST" clas="mx-auto">
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">buy</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" name="buy">
-                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                <label for="exampleInputEmail1" class="form-label">Buy (หน่วยเป็น btc Ex 1.25, 0.5)</label>
+                <input type="number" class="form-control" id="exampleInputEmail1" name="buy" min="1">
+                <div id="emailHelp" class="form-text">...</div>
             </div>
             <button type="submit" class="btn btn-primary">BUY</button>
         </form>
 
         <form method="POST" clas="mx-auto">
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Sell</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" name="sell">
-                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                <label for="exampleInputEmail1" class="form-label">Sell (หน่วยเป็น Satoshi Ex 1250, 500)</label>
+                <input type="number" class="form-control" id="exampleInputEmail1" name="sell" min="1000">
+                <div id="emailHelp" class="form-text">...</div>
             </div>
             <button type="submit" class="btn btn-primary">SELL</button>
         </form>

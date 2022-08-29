@@ -72,7 +72,7 @@
 
             if (isset($_POST['sell'])) {
                 
-                //Check satoshi for buy btc 
+                //Check Btc for sell satoshi 
                 if ($this->control->checkBuy($_POST['sell'] / 1000.00)) {
 
                     //Process Transection
